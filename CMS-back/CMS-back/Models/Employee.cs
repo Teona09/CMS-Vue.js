@@ -9,7 +9,7 @@ namespace CMS_back.Models
     {
         private static int idCount = 0;
 
-        public Employee(string fname, string lname, string email, DateTime birthdate, string photoSrc)
+        /*public Employee(string fname, string lname, string email, DateTime birthdate, string photoSrc)
         {
             this.Id = idCount;
             idCount++;
@@ -18,7 +18,7 @@ namespace CMS_back.Models
             this.Email = email;
             this.Birthdate = birthdate;
             this.PhotoSrc = photoSrc;
-        }
+        }*/
 
         public int Id { get; set; }
 
@@ -32,5 +32,4 @@ namespace CMS_back.Models
 
         public string PhotoSrc { get; set; }
     }
-}
 }

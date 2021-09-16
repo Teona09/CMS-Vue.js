@@ -12,7 +12,10 @@ namespace CMS_back.Services
 
         public EmployeesDataService()
         {
-            this.employeesData = new EmployeesData();
+            this.employeesData = new EmployeesData
+            {
+                List = new List<Employee>(),
+            };
         }
 
         public Employee GetEmployeeById(int id)
@@ -30,7 +33,14 @@ namespace CMS_back.Services
 
         public int AddEmployee(string fname, string lname, string email, DateTime birthdate, string photoSrc)
         {
-            Employee newEmployee = new Employee(fname, lname, email, birthdate, photoSrc);
+            //Employee newEmployee = new Employee(fname, lname, email, birthdate, photoSrc);
+            Employee newEmployee = new Employee();
+            newEmployee.Id = 1;
+            newEmployee.FirstName = fname;
+            newEmployee.LastName = lname;
+            newEmployee.Email = email;
+            newEmployee.Birthdate = birthdate;
+            newEmployee.PhotoSrc = photoSrc;
             this.employeesData.List.Add(newEmployee);
             return newEmployee.Id;
         }
@@ -49,6 +59,11 @@ namespace CMS_back.Services
             employeesData.List[index].Email = email;
             employeesData.List[index].Birthdate = birthdate;
             employeesData.List[index].PhotoSrc = photoSrc;
+        }
+
+        public EmployeesData GetEmployeeData()
+        {
+            return employeesData;
         }
     }
 }
