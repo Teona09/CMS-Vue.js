@@ -32,11 +32,11 @@ namespace CMS_back
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            //Configure DbContext 
+            // Configure DbContext 
             services.AddDbContext<AppDbContext>(options => options.UseNpgsql(ConnectionString));
 
-
-            services.AddSingleton<IEmployeesDataService>(new EmployeesDataService());
+            // Configure services
+            services.AddTransient<EmployeesService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hello World API", Version = "v1" });
