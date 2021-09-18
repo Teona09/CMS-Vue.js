@@ -1,6 +1,6 @@
-# CMS-Vue.js
+## CMS-Vue.js
 
-## Frontend
+### Frontend
 
 Cerintele pentru platforma de CMS sunt exact aceleasi ca data trecuta:
 
@@ -13,20 +13,20 @@ Cerintele pentru platforma de CMS sunt exact aceleasi ca data trecuta:
   - [ ] sortare (alfabetic dupa nume, dupa data nasterii) - server/loccally
   - [ ] filtrare (dupa sex, range pt data nasterii, has profile picture) - server/loccally
 
----
+-
 
-## Backend
+### Backend
 
 You will need to implement:
 
 A table of Employees containing all the required properties
 All the required functions to move the data around
 
----
+-
 
-### Keep in mind
+#### Keep in mind
 
-Don’t forget about GIT
-You will not need to demo the backend
-You are free to use any version of VueJS and any libraries of your choosing
-I recommend you use axios to communicate with the backend
+- Don’t forget about GIT
+- You will not need to demo the backend
+- You are free to use any version of VueJS and any libraries of your choosing
+- I recommend you use axios to communicate with the backend
