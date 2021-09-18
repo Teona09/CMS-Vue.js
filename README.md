@@ -9,9 +9,9 @@ Cerintele pentru platforma de CMS sunt exact aceleasi ca data trecuta:
 - Application must be fully responsive
 - BONUS topics:
 
-  - [ ] search (by name and email) - server/loccally
-  - [ ] sortare (alfabetic dupa nume, dupa data nasterii) - server/loccally
-  - [ ] filtrare (dupa sex, range pt data nasterii, has profile picture) - server/loccally
+  - [ ] search (by name and email) - server/locally
+  - [ ] sortare (alfabetic dupa nume, dupa data nasterii) - server/locally
+  - [ ] filtrare (dupa sex, range pt data nasterii, has profile picture) - server/locally
 
 ---
 
