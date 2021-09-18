@@ -1,8 +1,10 @@
 <template>
-  <!-- Add Button -->
-  <!-- Sort-Filter-Area -->
-  <!-- Employees-Table-->
-  <employees-table></employees-table>
+  <div class="content">
+    <!-- Add Button -->
+    <!-- Sort-Filter-Area -->
+    <!-- Employees-Table-->
+    <employees-table></employees-table>
+  </div>
 </template>
 
 <script>
@@ -16,4 +18,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+  padding: 0.625rem 0.625rem;
+  background-color: var(--pastel-yellow);
+}
+</style>
