@@ -456,3 +456,5 @@ $RECYCLE.BIN/
 *.bak
 *.xml
 *.vs
+*.dll
+*.pdb
