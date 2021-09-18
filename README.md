@@ -1,6 +1,6 @@
 ## CMS-Vue.js
 
-### Frontend
+### _*Frontend*_
 
 Cerintele pentru platforma de CMS sunt exact aceleasi ca data trecuta:
 
@@ -13,18 +13,18 @@ Cerintele pentru platforma de CMS sunt exact aceleasi ca data trecuta:
   - [ ] sortare (alfabetic dupa nume, dupa data nasterii) - server/loccally
   - [ ] filtrare (dupa sex, range pt data nasterii, has profile picture) - server/loccally
 
--
+--
 
-### Backend
+### _*Backend*_
 
 You will need to implement:
 
 A table of Employees containing all the required properties
 All the required functions to move the data around
 
--
+--
 
-#### Keep in mind
+#### _*Keep in mind*_
 
 - Don’t forget about GIT
 - You will not need to demo the backend
