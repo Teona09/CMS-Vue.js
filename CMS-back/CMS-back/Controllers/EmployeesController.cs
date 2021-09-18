@@ -36,7 +36,28 @@ namespace CMS_back.Controllers
         [HttpGet("get-employee-by-id/{id}")]
         public IActionResult GetEmployeeById(int id)
         {
-            return Ok(employeesService.GetEmployeeById(id));
+            var employee = employeesService.GetEmployeeById(id);
+            if(employee != null)
+            {
+                return Ok(employee);
+            } else
+            {
+                return NotFound();
+            }
+        }
+
+        [HttpPut("update-employee-by-id/{id}")]
+        public IActionResult UpdateEmployeeById(int id,[FromBody]EmployeeVM employee)
+        {
+            var updatedEmployee = employeesService.UpdateEmployeeById(id, employee);
+            return Ok(updatedEmployee);
+        }
+
+        [HttpDelete("delete-employee-by-id/{id}")]
+        public IActionResult DeleteEmployeeById(int id)
+        {
+            employeesService.DeleteEmployeeById(id);
+            return Ok();
         }
     }
 }

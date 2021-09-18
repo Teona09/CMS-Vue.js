@@ -39,5 +39,31 @@ namespace CMS_back.Services
         {
             return context.Employees.FirstOrDefault(_ => _.Id == id);
         }
+
+        public Employee UpdateEmployeeById(int id, EmployeeVM employee)
+        {
+            var employeeToBeUpdated = context.Employees.FirstOrDefault(_ => _.Id == id);
+            if(employeeToBeUpdated != null)
+            {
+                employeeToBeUpdated.FirstName = employee.FirstName;
+                employeeToBeUpdated.LastName = employee.LastName;
+                employeeToBeUpdated.Email = employee.Email;
+                employeeToBeUpdated.Birthdate = employee.Birthdate;
+                employeeToBeUpdated.PhotoSrc = employee.PhotoSrc;
+
+                context.SaveChanges();
+            }
+            return employeeToBeUpdated;
+        }
+
+        public void DeleteEmployeeById(int id)
+        {
+            var employee = context.Employees.FirstOrDefault(_ => _.Id == id);
+            if(employee != null)
+            {
+                context.Employees.Remove(employee);
+                context.SaveChanges();
+            }
+        }
     }
 }
