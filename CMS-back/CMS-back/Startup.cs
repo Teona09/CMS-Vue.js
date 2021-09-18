@@ -32,6 +32,12 @@ namespace CMS_back
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            // Enable CORS
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
+
             // Configure DbContext 
             services.AddDbContext<AppDbContext>(options => options.UseNpgsql(ConnectionString));
 
@@ -51,6 +57,9 @@ namespace CMS_back
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Enable CORS
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
