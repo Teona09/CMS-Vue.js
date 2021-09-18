@@ -27,6 +27,14 @@ namespace CMS_back.Models
         public string LastName { get; set; }
 
         public string Email { get; set; }
+        public int Gender { get; set; }
+        /* 0 - Other
+         * 1 - Male
+         * 2 - Female
+         * 3 - Ninja
+         * 4 - Robot
+         * 5 - Pirate
+         */
 
         public DateTime Birthdate { get; set; }
 

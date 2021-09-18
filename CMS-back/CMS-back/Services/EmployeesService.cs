@@ -23,6 +23,7 @@ namespace CMS_back.Services
                 FirstName = employee.FirstName,
                 LastName = employee.LastName,
                 Email = employee.Email,
+                Gender = employee.Gender,
                 Birthdate = employee.Birthdate,
                 PhotoSrc = employee.PhotoSrc,
             };
@@ -48,6 +49,7 @@ namespace CMS_back.Services
                 employeeToBeUpdated.FirstName = employee.FirstName;
                 employeeToBeUpdated.LastName = employee.LastName;
                 employeeToBeUpdated.Email = employee.Email;
+                employeeToBeUpdated.Gender = employee.Gender;
                 employeeToBeUpdated.Birthdate = employee.Birthdate;
                 employeeToBeUpdated.PhotoSrc = employee.PhotoSrc;
 

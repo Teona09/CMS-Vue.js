@@ -13,6 +13,8 @@ namespace CMS_back.ViewModels
 
         public string Email { get; set; }
 
+        public int Gender { get; set; }
+
         public DateTime Birthdate { get; set; }
 
         public string PhotoSrc { get; set; }
