@@ -18,6 +18,7 @@
       :fname="result.fname"
       :lname="result.lname"
       :email="result.email"
+      :gender="result.gender"
       :birthdate="result.birthdate"
       :photoSrc="result.photoSrc"
     ></employee>
@@ -36,13 +37,40 @@ export default {
     };
   },
   methods: {
+    convertGenderFromIntToString(number) {
+      switch (number) {
+        /* 0 - Other
+         * 1 - Male
+         * 2 - Female
+         * 3 - Ninja
+         * 4 - Robot
+         * 5 - Pirate
+         */
+        case 0: {
+          return "Other";
+        }
+        case 1: {
+          return "Male";
+        }
+        case 2: {
+          return "Female";
+        }
+        case 3: {
+          return "Ninja";
+        }
+        case 4: {
+          return "Robot";
+        }
+        case 5: {
+          return "Pirate";
+        }
+      }
+    },
     loadData() {
-      console.log("help");
       axios
         .get("https://localhost:5001/api/Employees/get-all-employees")
         .then((response) => {
           if (response.status) {
-            console.log(response);
             return response.data;
           }
         })
@@ -54,6 +82,7 @@ export default {
               fname: data[id].firstName,
               lname: data[id].lastName,
               email: data[id].email,
+              gender: this.convertGenderFromIntToString(data[id].gender),
               birthdate: data[id].birthdate,
               photoSrc: data[id].photoSrc,
             });

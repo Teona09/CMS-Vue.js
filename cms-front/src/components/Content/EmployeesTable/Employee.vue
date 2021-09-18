@@ -6,21 +6,20 @@
     <td>{{ email }}</td>
     <td>{{ gender }}</td>
     <td>{{ birthdate }}</td>
-    <td>{{ actions }}</td>
+    <td>
+      <button>
+        Edit
+      </button>
+      <button>
+        Delete
+      </button>
+    </td>
   </tr>
 </template>
 
 <script>
 export default {
-  props: [
-    "fname",
-    "lname",
-    "email",
-    "gender",
-    "birthdate",
-    "photoSrc",
-    "actions",
-  ],
+  props: ["fname", "lname", "email", "gender", "birthdate", "photoSrc"],
 };
 </script>
 
