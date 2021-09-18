@@ -1,17 +1,23 @@
 <template>
   <!-- Header -->
+  <Header></Header>
   <!-- Content -->
   <Content></Content>
   <!-- Footer -->
+  <Footer></Footer>
 </template>
 
 <script>
+import Header from "./components/Header.vue";
 import Content from "./components/Content/Content.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
   components: {
+    Header,
     Content,
+    Footer,
   },
 };
 </script>
@@ -25,7 +31,6 @@ export default {
 }
 
 * {
-  background-color: var(--pastel-yellow);
   margin: 0;
   padding: 0;
 }
