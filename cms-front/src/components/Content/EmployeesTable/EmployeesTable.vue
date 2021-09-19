@@ -28,6 +28,7 @@
 
 <script>
 import axios from "axios";
+import moment from "moment";
 import Employee from "./Employee.vue";
 export default {
   name: "App",
@@ -38,6 +39,7 @@ export default {
     };
   },
   methods: {
+    moment: moment,
     convertGenderFromIntToString(number) {
       switch (number) {
         /* 0 - Other
@@ -67,6 +69,10 @@ export default {
         }
       }
     },
+    convertTimestampToDate(timestamp) {
+      var birthdate = moment(timestamp);
+      return birthdate.format("DD MMM YYYY");
+    },
     loadData() {
       axios
         .get("https://localhost:5001/api/Employees/get-all-employees")
@@ -84,7 +90,7 @@ export default {
               lname: data[id].lastName,
               email: data[id].email,
               gender: this.convertGenderFromIntToString(data[id].gender),
-              birthdate: data[id].birthdate,
+              birthdate: this.convertTimestampToDate(data[id].birthdate),
               photoSrc: data[id].photoSrc,
             });
           }
