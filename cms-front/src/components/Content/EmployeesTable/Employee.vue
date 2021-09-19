@@ -1,6 +1,8 @@
 <template>
   <tr>
-    <td>{{ photoSrc }}</td>
+    <td>
+      <img v-bind:src="photoSrc" alt="profileImage" height="40" />
+    </td>
     <td>{{ fname }}</td>
     <td>{{ lname }}</td>
     <td>{{ email }}</td>
