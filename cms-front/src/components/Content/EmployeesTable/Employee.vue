@@ -21,25 +21,23 @@
 
 <script>
 import axios from "axios";
+import variables from "../../../variables";
 
 export default {
   props: ["id", "fname", "lname", "email", "gender", "birthdate", "photoSrc"],
+  data() {
+    return {
+      deleteAPI: variables.DELETE_BY_ID_API,
+    };
+  },
   methods: {
     removeEmployee(id) {
-      console.log(id);
       if (!confirm("Are you sure you want to delete this employee?")) {
         return;
       }
-      console.log(id);
-      // axios delete-by-id
-      axios
-        .delete(
-          "https://localhost:5001/api/Employees/delete-employee-by-id/" + id
-        )
-        .then((response) => {
-          alert("refresh the page");
-          console.log(response.data);
-        });
+      axios.delete(this.deleteAPI + id).then(() => {
+        this.$emit("actions-on-employee");
+      });
     },
   },
 };

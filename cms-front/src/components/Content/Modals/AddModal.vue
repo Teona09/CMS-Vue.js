@@ -75,7 +75,7 @@
 
 <script>
 import moment from "moment";
-import img from "../../../assets/logo.png";
+import variables from "../../../variables";
 import axios from "axios";
 export default {
   props: ["open"],
@@ -89,15 +89,19 @@ export default {
       birthdate: "",
       photoSrc: "",
       file: "",
-      placeholderImg: img.src,
+      placeholderImg: variables.DEFAULT_IMAGE_BASE64,
+      postAPI: variables.POST_API,
     };
   },
   methods: {
     moment: moment,
     submitData() {
       if (this.checkInput()) {
+        if (this.photoSrc == "") {
+          this.photoSrc = this.placeholderImg;
+        }
         axios
-          .post("https://localhost:5001/api/Employees/add-employee", {
+          .post(this.postAPI, {
             firstName: this.fname,
             lastName: this.lname,
             email: this.email,
@@ -105,7 +109,10 @@ export default {
             birthdate: this.birthdate,
             photoSrc: this.photoSrc,
           })
-          .then((response) => console.log("added data \n" + response));
+          .then(() => {
+            this.$emit("close");
+            location.reload();
+          });
       }
     },
     previewImage: function(event) {
@@ -156,12 +163,6 @@ export default {
       if (errors.length === 0) return true;
       alert(errors);
       return false;
-    },
-    fileToBase64(e) {
-      this.photoSrc = "";
-      const file = e.target.files[0];
-      this.photoSrc = URL.createObjectURL(file);
-      console.log(this.photoSrc);
     },
   },
 };

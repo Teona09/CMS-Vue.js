@@ -2,7 +2,7 @@
   <section class="addSection">
     <button id="addWithModal" @click="showDialog()">Add record</button>
     <!-- The Modal -->
-    <add-modal :open="dialogIsVisible" class="input-form">
+    <add-modal :open="dialogIsVisible" class="input-form" @close="hideDialog()">
       <button id="close" @click="hideDialog()">&times;</button>
     </add-modal>
   </section>

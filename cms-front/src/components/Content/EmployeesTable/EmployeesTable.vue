@@ -22,6 +22,7 @@
       :gender="result.gender"
       :birthdate="result.birthdate"
       :photoSrc="result.photoSrc"
+      @actions-on-employee="actions"
     ></employee>
   </table>
 </template>
@@ -29,6 +30,7 @@
 <script>
 import axios from "axios";
 import moment from "moment";
+import variables from "../../../variables";
 import Employee from "./Employee.vue";
 export default {
   name: "App",
@@ -36,6 +38,7 @@ export default {
   data() {
     return {
       results: [],
+      getAllAPI: variables.GET_ALL_API,
     };
   },
   methods: {
@@ -75,7 +78,7 @@ export default {
     },
     loadData() {
       axios
-        .get("https://localhost:5001/api/Employees/get-all-employees")
+        .get(this.getAllAPI)
         .then((response) => {
           if (response.status) {
             return response.data;
@@ -99,6 +102,9 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+    },
+    actions() {
+      this.loadData();
     },
   },
   mounted() {
