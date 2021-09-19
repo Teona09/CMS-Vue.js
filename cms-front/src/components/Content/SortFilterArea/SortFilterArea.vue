@@ -14,7 +14,6 @@ import SearchInput from "./SearchInput.vue";
 import SortArea from "./SortArea.vue";
 import FilterArea from "./FilterArea.vue";
 export default {
-  name: "App",
   components: {
     SearchInput,
     SortArea,
@@ -35,7 +34,7 @@ export default {
   padding-right: 1.5rem;
   padding-bottom: 0.1rem;
   width: 70%;
-  height: 10rem;
-  top: 6rem;
+  height: 8rem;
+  top: 10rem;
 }
 </style>
