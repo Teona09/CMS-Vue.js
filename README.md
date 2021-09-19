@@ -30,3 +30,8 @@ All the required functions to move the data around
 - You will not need to demo the backend
 - You are free to use any version of VueJS and any libraries of your choosing
 - I recommend you use axios to communicate with the backend
+
+---
+
+# Vuex
+if you want to install it use `npm install --save vuex@next`
