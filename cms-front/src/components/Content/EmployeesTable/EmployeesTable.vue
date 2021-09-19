@@ -15,6 +15,7 @@
     <employee
       v-for="result in results"
       :key="result.id"
+      :id="result.id"
       :fname="result.fname"
       :lname="result.lname"
       :email="result.email"
@@ -78,7 +79,7 @@ export default {
           const results = [];
           for (const id in data) {
             results.push({
-              id: id,
+              id: data[id].id,
               fname: data[id].firstName,
               lname: data[id].lastName,
               email: data[id].email,
@@ -120,17 +121,12 @@ export default {
 }
 
 #employees-table,
-th,
-td {
+th {
   border-width: 0.025rem;
   border-color: black;
   border-style: solid;
   border-collapse: collapse;
   font-size: 1.125rem;
-}
-
-th,
-td {
   padding: 0.625rem 0.625rem;
   background-color: var(--pastel-light-green);
   color: var(--orange);
