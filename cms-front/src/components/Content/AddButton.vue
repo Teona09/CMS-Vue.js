@@ -51,12 +51,19 @@ export default {
   }
 }
 
+.addSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #addWithModal {
   position: fixed;
   top: 7rem;
   color: var(--pastel-yellow);
   padding: 0.125rem;
-  width: 10rem;
+  width: 10%;
+  min-width: 5rem;
   font-size: 1.125rem;
   background-color: var(--orange);
 }
@@ -82,7 +89,7 @@ export default {
 
 #close:hover,
 #close:focus {
-  color: #000;
+  color: var(--orange);
   text-decoration: none;
   cursor: pointer;
 }

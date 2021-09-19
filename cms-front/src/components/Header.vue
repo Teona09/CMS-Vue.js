@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h2>EMS</h2>
+    <h1>EMS</h1>
   </div>
 </template>
 
@@ -18,5 +18,6 @@
   color: var(--orange);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 </style>

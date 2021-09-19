@@ -112,7 +112,7 @@ export default {
   width: 62.5em;
   text-align: left;
   position: fixed;
-  top: 15rem;
+  top: 20rem;
 }
 
 #employees-table caption {
@@ -136,5 +136,33 @@ th {
   padding: 0.625rem 0.625rem;
   background-color: var(--pastel-light-green);
   color: var(--orange);
+}
+
+@media (max-width: 1120px) {
+  #employees-table {
+    width: 45em;
+  }
+  #employees-table caption {
+    font-size: 1.125rem;
+    padding: 0.45rem 0.45rem;
+  }
+
+  th {
+    text-align: left;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 800px) {
+    #employees-table {
+      width: 35em;
+    }
+    #employees-table caption {
+      font-size: 1rem;
+      padding: 0.45rem 0.45rem;
+    }
+    th {
+      font-size: 0.75rem;
+    }
+  }
 }
 </style>

@@ -76,4 +76,28 @@ td {
 #delete-icon {
   color: red;
 }
+
+@media (max-width: 1120px) {
+  td {
+    font-size: 0.875rem;
+  }
+
+  .icons {
+    padding: 0.05rem;
+    width: 1.75rem;
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 800px) {
+  td {
+    font-size: 0.75rem;
+  }
+
+  .icons {
+    padding: 0.05rem;
+    width: 1.25rem;
+    font-size: 1.25rem;
+  }
+}
 </style>

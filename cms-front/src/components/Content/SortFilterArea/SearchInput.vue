@@ -32,8 +32,8 @@ export default {};
 }
 
 #search-icon {
-  position: absolute;
-  left: 30.7%;
-  top: 46%;
+  position: relative;
+  left: -9%;
+  top: 10%;
 }
 </style>

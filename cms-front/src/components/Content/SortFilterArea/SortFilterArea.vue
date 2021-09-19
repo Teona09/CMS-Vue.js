@@ -29,6 +29,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   padding-top: 0.1rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
