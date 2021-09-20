@@ -9,9 +9,8 @@
     <td>{{ gender }}</td>
     <td>{{ birthdate }}</td>
     <td class="actions">
-      <button class="icons" id="edit-icon">
-        <i class="fas fa-pen-square"></i>
-      </button>
+      <edit-button :idEmp="this.id" @edit-completed="passMessage">
+      </edit-button>
       <button class="icons" id="delete-icon" @click="removeEmployee(this.id)">
         <i class="fas fa-times fa"></i>
       </button>
@@ -22,9 +21,13 @@
 <script>
 import axios from "axios";
 import variables from "../../../variables";
+import EditButton from "./EditButton.vue";
 
 export default {
   props: ["id", "fname", "lname", "email", "gender", "birthdate", "photoSrc"],
+  components: {
+    EditButton,
+  },
   data() {
     return {
       deleteAPI: variables.DELETE_BY_ID_API,
@@ -38,6 +41,9 @@ export default {
       axios.delete(this.deleteAPI + id).then(() => {
         this.$emit("actions-on-employee");
       });
+    },
+    passMessage() {
+      this.$emit("actions-on-employee");
     },
   },
 };
